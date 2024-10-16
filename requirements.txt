@@ -1,1 +1,1 @@
-sklearn
+pip install sklearn
