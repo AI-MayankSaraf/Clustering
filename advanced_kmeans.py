@@ -26,7 +26,8 @@ dimensionality_reduction = st.sidebar.selectbox("Dimensionality Reduction Method
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     st.write("Data Preview:", data.head())
-
+    #data = X.iloc[:, [3, 4]].values
+    data = data.drop(['Genre'], axis=1)
     # Feature selection
     features = st.sidebar.multiselect("Select features for clustering", data.columns.tolist(), default=data.columns.tolist())
     
